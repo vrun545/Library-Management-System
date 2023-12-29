@@ -1,0 +1,61 @@
+<button type="button" (click)="navToHome()" class="btn btn-dark back-button">Back</button>
+<div class="user-details-container">
+  <h3 class="list-heading">My Profile</h3>
+  <div class="user-info">
+    <table class="table">
+      <tr>
+        <td><strong>User Unique Id:</strong></td>
+        <td><b>{{ profile?.id }}</b></td>
+      </tr>
+      <tr>
+        <td><strong>User Name:</strong></td>
+        <td><b>{{ profile?.name }}</b></td>
+      </tr>
+      <tr>
+        <td><strong>UserID:</strong></td>
+        <td><b>{{ profile?.username }}</b></td>
+      </tr>
+      <tr>
+        <td><strong>Tokens Available:</strong></td>
+        <td><b>{{ profile?.token }}</b></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div>
+  <h3 class="list-heading">List of My Uploaded Books</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Serial No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of bookList; let i = index">
+      <tr>
+        <td>{{ i+1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.author }}</td>
+        <td>{{ item.rating }}</td>
+        <td>{{ item.genre }}</td>
+        <td>
+          <button type="button" class="btn btn-dark" *ngIf="!item.isBookAvailable; else availableText">
+            Borrowed By userId: {{ item.currentlyBorrowedBy }}
+          </button>
+          <ng-template #availableText>
+            <label type="text">
+              Book Available for Others
+            </label>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+</div>

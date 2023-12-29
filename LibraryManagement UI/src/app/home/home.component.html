@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header">
+    <h2>List of Books</h2>
+    <app-search (searchTermChange)="searchBooks($event)"></app-search>
+  </div>
+  <div class="card-body">
+    <div class="table-container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Serial No</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr scope="row" *ngFor="let book of filteredBooks; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ book.name }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.rating }}</td>
+            <td>{{ book.genre }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="viewBookDetails(book.bookid)">View</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

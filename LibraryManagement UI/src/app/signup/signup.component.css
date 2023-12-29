@@ -1,0 +1,44 @@
+.custom-card {
+    width: 100%;
+    max-width: 700px;
+    margin: 50px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+  }
+  
+  .custom-card label {
+    font-weight: bold;
+  }
+  
+  .custom-card input[type="text"],
+  .custom-card input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  .signup
+  {
+    text-align: center;
+  }
+  
+  .custom-card button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .custom-card button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,68 @@
+<button type="button" (click)="navToHome()" class="btn btn-dark back-button">Back</button>
+
+<h3 class="book-heading"> Add New Book </h3>
+<div class="container">
+  <div class="custom-card mt-3">
+    <form #addProduct="ngForm" (ngSubmit)="onSubmit(addProduct.value, addProduct)" class="common-form">
+      <div class="form-group">
+        <label for="name" class="form-label">Book Name</label>
+        <input type="text" placeholder="Enter Book Name" class="form-control" id="name" ngModel #name="ngModel"
+          name="name" required minlength="5" maxlength="80">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+          <div *ngIf="name.errors?.['required']">Book Name is required.</div>
+          <div *ngIf="name.errors?.['minlength']">Book Name must be at least 5 characters long.</div>
+          <div *ngIf="name.errors?.['maxlength']">Book Name cannot be more than 80 characters long.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="author" class="form-label">Author Name</label>
+        <input type="text" placeholder="Enter Author Name" class="form-control" id="author" ngModel #author="ngModel"
+          name="author" required minlength="3" maxlength="50">
+        <div *ngIf="author.invalid && (author.dirty || author.touched)" class="text-danger">
+          <div *ngIf="author.errors?.['required']">Author Name is required.</div>
+          <div *ngIf="author.errors?.['minlength']">Author Name must be at least 3 characters long.</div>
+          <div *ngIf="author.errors?.['maxlength']">Author Name cannot be more than 50 characters long.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="rating" class="form-label">Rating</label>
+        <input type="number" class="form-control" id="rating" ngModel #rating="ngModel" name="rating" min="0" max="5"
+          required>
+        <div *ngIf="rating.invalid && (rating.dirty || rating.touched)" class="text-danger">
+          <div *ngIf="rating.errors?.['required']">Rating is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="genre" class="form-label">Genre</label>
+        <input type="text" placeholder="Enter Book Genre" class="form-control" id="genre" ngModel #genre="ngModel"
+          name="genre" required>
+        <div *ngIf="genre.invalid && (genre.dirty || genre.touched)" class="text-danger">
+          <div *ngIf="genre.errors?.['required']">Genre is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="image" class="form-label">Image Link</label>
+        <input type="text" placeholder="Image Link" class="form-control" id="image" ngModel #image="ngModel"
+          name="image" required>
+        <div *ngIf="image.invalid && (image.dirty || image.touched)" class="text-danger">
+          <div *ngIf="image.errors?.['required']">Image Link is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description" class="form-label">Book Description</label>
+        <textarea class="form-control" placeholder="Enter Book Description" id="description" ngModel #description="ngModel"
+          name="description" required></textarea>
+        <div *ngIf="description.invalid && (description.dirty || description.touched)" class="text-danger">
+          <div *ngIf="description.errors?.['required']">Book Description is required.</div>
+        </div>
+      </div>
+
+      <button type="submit" class="add-button btn btn-primary" [disabled]="addProduct.invalid">Upload Book</button>
+    </form>
+  </div>
+</div>

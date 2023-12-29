@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="login">Login Here</h1>
+  <div class="custom-card mt-4">
+
+    <form #userLogin="ngForm" class="common-form" (ngSubmit)="onSubmit(userLogin.value)">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" ngModel #username="ngModel" required minlength="4" maxlength="10">
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-danger">
+          <div *ngIf="username.errors?.['required']">Username is required.</div>
+          <div *ngIf="username.errors?.['minlength']">Username must be at least 4 characters long.</div>
+          <div *ngIf="username.errors?.['maxlength']">Username cannot be more than 10 characters long.</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" ngModel #password="ngModel" required minlength="5" maxlength="10">
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+          <div *ngIf="password.errors?.['required']">Password is required.</div>
+          <div *ngIf="password.errors?.['minlength']">Password must be at least 5 characters long.</div>
+          <div *ngIf="password.errors?.['maxlength']">Password cannot be more than 10 characters long.</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="userLogin.invalid">Login</button>
+      <br>
+      <br>
+      <button type="button" (click)="navToSignUp()" class="btn btn-primary">Signup</button>
+    </form>
+
+  </div>
+</div>

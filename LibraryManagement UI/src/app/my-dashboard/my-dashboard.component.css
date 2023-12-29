@@ -1,0 +1,40 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .back-button {
+    margin: 2px; 
+   }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  } 
+ 
+  .table td:first-child {
+    font-weight: bold;
+  }
+  
+  .book-description {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  .borrow-button {
+    margin-top: 25px; 
+
+  } 
+   
+.list-heading{
+  background-color: #151617; 
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}

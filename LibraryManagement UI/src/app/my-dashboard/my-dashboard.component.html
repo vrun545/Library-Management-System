@@ -1,0 +1,31 @@
+<button type="button" (click)="navToHome()" class="btn btn-dark back-button">Back</button>
+
+<h3 class="list-heading">List of My Borrowed Books</h3>
+<div class="table-container">
+<table class="table table-striped">
+  <thead >
+    <tr>
+      <th scope="col">Serial No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Author</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody  *ngFor="let item of bookList; let i = index" >
+    <tr scope="row">
+      <th >{{ i + 1 }}</th>
+      <td>{{ item.name }}</td>
+      <td>{{ item.author }}</td>
+      <td>{{ item.rating }}</td>
+      <td>{{ item.genre }}</td>
+      <td><button type="button" class="btn btn-danger" (click)="returnBook(item.bookid)">Return Book</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+

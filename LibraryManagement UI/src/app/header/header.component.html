@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">BookWorm</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <ng-container *ngIf="isLoggedIn; else randomUser">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/home']">Home</a>
+          <a class="nav-link active" [routerLink]="['/home/user/aboutme']">My Profile</a>
+          <a class="nav-link active" [routerLink]="['/home/user/addbook']">New Book</a>
+          <a class="nav-link active" [routerLink]="['/home/user/dashboard']">Dashboard</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Hi! {{profile?.name}}
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link active" style="cursor: pointer;" (click)="userLogout()">Logout</a></li>
+            </ul>
+          </li>
+        </ng-container>
+
+        <ng-template #randomUser>
+          <a class="nav-link active" [routerLink]="['']">Login</a>
+          <a class="nav-link active" [routerLink]="['/signup']">SignUp </a>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</nav>
