@@ -19,6 +19,18 @@ This Library Management System is a web application built using various technolo
 - **Frontend:** Angular
 - **Database:** SQL Server Management Studio (SSMS)
 
+## Few ScreenShots
+
+![Screenshot (245)](https://github.com/vrun545/Library-Management-System/assets/63057049/60eda824-abed-4b20-80ac-effc5cef847c)
+
+![Screenshot (246)](https://github.com/vrun545/Library-Management-System/assets/63057049/e11d2a2e-0d11-4c5c-bf85-8d21803253eb)
+
+![Screenshot (247)](https://github.com/vrun545/Library-Management-System/assets/63057049/2127448b-3eca-4b24-bebb-f68cd1d17b5e)
+
+![Screenshot (250)](https://github.com/vrun545/Library-Management-System/assets/63057049/10376b17-02bf-4789-be7b-2e3d18226970)
+
+
+
 ## Getting Started
 
 To run this application locally, follow these steps:
